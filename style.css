@@ -50,6 +50,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
     padding: 20px;
     width: auto;
     height: auto;
@@ -84,12 +85,12 @@ body {
 
 .section-title {
     font-family: "Inter", serif;
-    font-size: 36px;
+    font-size: 2.5vw;
     font-weight: 700;
     color: var(--color-primary);
     margin: 10px 0;
     justify-content: left;
-    text-align: left;
+    text-align: center;
 }
 
 /* Contenedores de entrada y botón */
@@ -102,7 +103,9 @@ body {
 }
 
 .input-name {
+    flex: 1;
     width: 100%;
+    min-width: 150px;
     padding: 10px;
     border: 2px solid #000;
     border-radius: 0 0 0 0;
@@ -189,8 +192,49 @@ ul {
 
 .button-draw img {
     margin-right: 40px;
+    width: 24px;
 }
 
 .button-draw:hover {
     background-color: var(--color-button-hover);
+}
+
+@media (max-width: 1200px) {
+    
+    .header-banner {
+        flex-direction: column; /* Apila los elementos en pantallas pequeñas */
+        text-align: center;
+    }
+    
+    .main-title {
+    font-size: 5vw; /* Ajusta el tamaño del texto */
+    text-align: center;
+    }
+
+    .header-banner img {
+        max-width: 80%; /* Reduce el tamaño de la imagen */
+        justify-content: center;
+    }
+    
+    .input-wrapper {
+        flex-direction: column; /* Apila los botones y el input en pantallas pequeñas */
+        width: 100%;
+    }
+    
+    .input-name {
+        width: 100%; /* Hace que el input ocupe toda la pantalla */
+    }
+    
+    .section-title {
+        font-size: 20px; /* Reduce el tamaño del título en móviles */
+    }
+
+    .button-draw {
+        width: 100%;
+        max-width: none;
+    }
+
+    .button-reset, .button-add {
+        width: 100%; /* Botones del mismo tamaño en móviles */
+            }
 }
